@@ -39,6 +39,9 @@ function generatePassword(options) {
     collection = collection.filter(character => !options.excludeCharacters.includes(character)
     )
   }
+  if (collection.length === 0) {
+    return 'There is no valid characters in your selection.'
+  }
   // 使用者想要幾個密碼就傳幾個
   let password = ''
   for (let i = 1; i <= options.length; i++) {
